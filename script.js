@@ -1,57 +1,55 @@
 "use strict"
 
-let hour = 0
-let minute = 0
-let second = 0
-let millisecond = 0
+var corpo = document.getElementById('corpo')
+var iniciar = document.getElementById('iniciar')
+var pausa = document.getElementById('pausa')
+var parar = document.getElementById('parar')
 
-let cron
+var hh = 0
+var mm = 0
+var ss = 0
 
-document.form_main.start.onclick = start()
-document.form_main.pause.onclick = pause()
-document.form_main.reset.onclick = reset()
+var tempo = 10
+var cron
 
-function start() {
-    pause()
-    cron = setInterval(() => {
-        Time()
-    }, 10)
-}
 
-function pause() {
+iniciar.addEventListener('click', ()=>{
+    cron = setInterval(time, tempo)
+    corpo.style.backgroundColor = "green"
+    document.getElementById('conter').style.color = "white"
+})
+
+pausa.addEventListener('click', ()=>{
     clearInterval(cron)
-}
+    corpo.style.backgroundColor = "orange"
+    document.getElementById('conter').style.color = "black"
+})
 
-function reset() {
-    hour = 0;
-    minute = 0;
-    second = 0;
-    millisecond = 0;
-    document.getElementById('hour').innerText = '00';
-    document.getElementById('minute').innerText = '00';
-    document.getElementById('second').innerText = '00';
-    document.getElementById('millisecond').innerText = '000';
-}
+parar.addEventListener('click', ()=>{
+    clearInterval(cron)
+    hh = 0
+    mm = 0
+    ss = 0
 
-function timer() {
-    if ((millisecond += 10) == 1000) {
-        millisecond = 0;
-        second++;
-    }
-    if (second == 60) {
-        second = 0;
-        minute++;
-    }
-    if (minute == 60) {
-        minute = 0;
-        hour++;
-    }
-    document.getElementById('hour').innerText = returnData(hour);
-    document.getElementById('minute').innerText = returnData(minute);
-    document.getElementById('second').innerText = returnData(second);
-    document.getElementById('millisecond').innerText = returnData(millisecond);
-}
+    document.getElementById('conter').innerText = '00:00:00'
+    corpo.style.backgroundColor = "white"
+    document.getElementById('conter').style.color = "black"
+})
 
-function returnData(input) {
-    return input > 10 ? input : `0${input}`
+function time(){
+    ss++
+
+    if (ss == 60) {
+       ss = 0
+       mm++ 
+
+       if (mm == 60) {
+        mm = 0
+        hh++
+       }
+    }
+
+
+    var format = (hh < 10 ? '0' + hh : hh) + ':' + (mm < 10 ? '0' + mm : mm) + ':' + (ss < 10 ? '0' + ss : ss)
+    document.getElementById('conter').innerHTML = format
 }

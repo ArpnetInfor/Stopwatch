@@ -1,35 +1,27 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylo.css">
-    <title>Stopwatch</title>
-</head>
-
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="stylo.css" />
+    <title>CRONOMETRO</title>
+  </head>
+  <body id="corpo">
     <div class="container">
-        <form name="form_main">
-            <div class="boxContainer">
-                <span id="hour">00</span>
-                <span>:</span>
-                <span id="minute">00</span>
-                <span>:</span>
-                <span id="second">00</span>
-                <span>:</span>
-                <span id="millisecond">000</span>
+        
+            <div class="display">
+                <h1 id="conter">00:00:00</h1>
             </div>
-            <div class="botao">
-                <button name="start">START</button>
-                <button name="pause">PAUSE</button>
-                <button name="reset">RESET</button>
-            </div>
-        </form>
+
+            <div class="buttonContainer">
+                <button id="iniciar">INICIAR</button>
+                <button id="pausa">PAUSA</button>
+                <button id="parar">PARAR</button>        
+            </div>        
 
     </div>
-    <script src="script.js"></script>
-</body>
 
+    <script src="script.js"></script>
+  </body>
 </html>

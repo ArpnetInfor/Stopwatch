@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -8,48 +9,48 @@
 .container {
     width: 100vw;
     height: 100vh;
-    border: 13rem solid;
-    border-color: rgb(49, 47, 47) rgb(77, 73, 73) rgb(49, 47, 47) rgb(77, 73, 73);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border: 400px solid;
+    border-color: rgb(46, 46, 48) rgb(80, 80, 82) rgb(46, 46, 48) rgb(80, 80, 82);
 }
 
-.boxContainer {
-    border: 2px solid black;
+
+
+.display {
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
 }
 
-.boxContainer span {
-    font-size: 80pt;
+.display h1 {
+    font-size: 50pt;
     font-family: 'Orbitron', sans-serif;
 }
 
-.botao {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    align-items: center;
-    padding: 20px;
-    margin-top: 5px;
+
+.buttonContainer {
+    position: absolute;
+    margin-top: 200px;
 }
 
-.botao button {
-    cursor: pointer;
-    width: 200px;
-    height: 30px;
-    margin-right: 10px;
+.buttonContainer button {
+    width: 8rem;
+    margin: 20px;
+    height: 3rem;
     border: none;
     font-size: large;
-    padding: 5px;
-    background-color: black;
-    color: white;
-    border-radius: 5px;
+    cursor: pointer;
+    background-color: silver;
 }
 
 button:hover {
-    background-color: silver;
-    color: black;
+    background-color: black;
+    color: white;
+    border: 1px solid greenyellow;
 }
